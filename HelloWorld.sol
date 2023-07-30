@@ -19,6 +19,7 @@ contract HelloWorld {
     }
 
     function transferOwnership(address newOwner) public onlyOwner {
+        require(newOwner != owner, "New owner must be different from the current owner");
         owner = newOwner;
     }
 
